@@ -1,0 +1,43 @@
+name: Workflow Triggered by Repository Dispatch
+
+on:
+  repository_dispatch:
+    types:
+      - workflow-trigger  # Use the same custom event name as in Repository A
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure Git
+        run: |
+          git config --global user.name "arpitjindal-pythonD"
+          git config --global user.email "arpit.jindal@protonmail.com"
+          
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Add your workflow steps here
+      - name: Update Submodules
+        run: |
+          git submodule update --init --recursive
+          git submodule foreach --recursive git fetch
+          git submodule foreach --recursive git checkout origin/main
+          git add .
+          git commit -m "updates"
+          git push
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14 # You can specify the Node.js version you need
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run prebuilt.js
+        run: node pre-build-script.js
+
+      - name: Run npm start
+        run: npm run start
