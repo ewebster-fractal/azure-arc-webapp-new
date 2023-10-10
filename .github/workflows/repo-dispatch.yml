@@ -35,11 +35,6 @@ jobs:
         with:
           node-version: 14 # You can specify the Node.js version you need
 
-      - name: Install dependencies
-        run: |
-          npm install
-          npm run build
-
       - name: Final Steps
         run: |
           git add .
