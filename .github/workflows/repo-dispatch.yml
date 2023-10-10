@@ -27,8 +27,7 @@ jobs:
 
       - name: Copying files from submodule
         run: |
-          rsync -avz /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/docs/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/
-          
+          rsync -avz /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/docs/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/          
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -36,6 +35,9 @@ jobs:
 
       - name: Final Steps
         run: |
+          cd home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app
+          npm install
+          npm run build
           git add .
           git commit -m "updates"
           git push
