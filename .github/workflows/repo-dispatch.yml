@@ -35,7 +35,7 @@ jobs:
 
       - name: Final Steps
         run: |
-          cd home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app
+          ls
           npm install
           npm run build
           git add .
