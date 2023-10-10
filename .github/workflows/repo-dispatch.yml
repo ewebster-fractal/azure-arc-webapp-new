@@ -24,13 +24,11 @@ jobs:
           git submodule update --init --recursive
           git submodule foreach --recursive git fetch
           git submodule foreach --recursive git checkout origin/main
-          git add .
-          git commit -m "updates"
-          git push
 
       - name: Copying files from submodule
         run: |
-          rsync -avz ./azure-arc-docs/img ./azure-arc-jumpstart-app/public/img
+          rsync -uav ./azure-arc-docs/img ./azure-arc-jumpstart-app/public/img
+          rsync -uav ./azure-arc-docs/docs ./azure-arc-jumpstart-app/public/docs
           
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -38,4 +36,12 @@ jobs:
           node-version: 14 # You can specify the Node.js version you need
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm run build
+
+      - name: Final Steps
+        run: |
+          git add .
+          git commit -m "updates"
+          git push
