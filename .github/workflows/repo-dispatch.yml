@@ -30,7 +30,7 @@ jobs:
 
       - name: Copying files from submodule
         run: |
-          rsync -avz azure-arc-docs/docs/ azure-arc-jumpstart-app/public
+          rsync -avz azure-arc-docs/img azure-arc-jumpstart-app/public/img
           
       - name: Setup Node.js
         uses: actions/setup-node@v2
