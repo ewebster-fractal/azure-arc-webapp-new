@@ -21,6 +21,8 @@ jobs:
           git config --global user.email "arpit.jindal@protonmail.com"
           git config --global user.name "arpitjindal-pythonD"
           git submodule update --init --recursive
+          git submodule foreach --recursive git fetch
+          git submodule foreach --recursive git checkout origin/main
           cd /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs
           ls
           cp -r /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/docs/* /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public
