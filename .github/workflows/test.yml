@@ -21,8 +21,6 @@ jobs:
           ls
           cd azure-arc-docs
           ls
-          rsync -avz /azure-arc-docs/img/ /azure-arc-jumpstart-app/public/img/
-          rsync -avz /azure-arc-docs/docs/ /azure-arc-jumpstart-app/public/docs/
           git add .
           git commit -m "updates"
           git push
