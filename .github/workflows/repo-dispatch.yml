@@ -27,6 +27,10 @@ jobs:
           git add .
           git commit -m "updates"
           git push
+
+      - name: Copying files from submodule
+        run: |
+          rsync -avz azure-arc-docs/docs/ azure-arc-jumpstart-app/public
           
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -35,8 +39,3 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Build
-        run: |
-          cd azure-arc-jumpstart-app
-          npm run build
