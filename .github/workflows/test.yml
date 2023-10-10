@@ -18,6 +18,8 @@ jobs:
     # You can use different actions or scripts based on your project's requirements.
     - name: Copying files from submodule
       run: |
+          git config --global user.email "arpit.jindal@protonmail.com"
+          git config --global user.name "arpitjindal-pythonD"
           git submodule update --init --recursive
           cd /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs
           ls
