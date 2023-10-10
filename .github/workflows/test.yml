@@ -21,7 +21,7 @@ jobs:
           git submodule update --init --recursive
           cd /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs
           ls
-          cp -r azure-arc-webapp-new/azure-arc-docs/docs/* ./azure-arc-webapp-new/azure-arc-jumpstart-app/public/
+          cp -r /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/docs/* /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/docs
           git add .
           git commit -m "updates"
           git push
