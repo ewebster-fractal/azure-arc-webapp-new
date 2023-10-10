@@ -36,8 +36,6 @@ jobs:
       - name: Final Steps
         run: |
           ls
-          npm install
-          npm run build
           git add .
           git commit -m "updates"
           git push
