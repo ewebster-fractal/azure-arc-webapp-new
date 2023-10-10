@@ -27,8 +27,8 @@ jobs:
 
       - name: Copying files from submodule
         run: |
-          rsync -avz /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/docs/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/docs/
-          rsync -avz /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/img/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/img/         
+          rsync -avz /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/docs/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/docs
+          rsync -avz /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/img/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/img        
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
