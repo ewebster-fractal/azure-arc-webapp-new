@@ -18,7 +18,8 @@ jobs:
     # You can use different actions or scripts based on your project's requirements.
     - name: Copying files from submodule
       run: |
-          cp -r azure-arc-docs/docs/* ./azure-arc-webapp-new/azure-arc-jumpstart-app/public/
+          git submodule update --init --recursive
+          cp -r azure-arc-webapp-new/azure-arc-docs/docs/* ./azure-arc-webapp-new/azure-arc-jumpstart-app/public/
           git add .
           git commit -m "updates"
           git push
