@@ -16,3 +16,10 @@ jobs:
     # Add your build and deployment steps here
     # For example, you can run tests, build your application, or deploy to a hosting service.
     # You can use different actions or scripts based on your project's requirements.
+    - name: Copying files from submodule
+      run: |
+          rsync -avz azure-arc-docs/img/ azure-arc-jumpstart-app/public/img/
+          rsync -avz azure-arc-docs/docs/ azure-arc-jumpstart-app/public/docs/
+          git add .
+          git commit -m "updates"
+          git push
