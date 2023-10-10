@@ -1,0 +1,18 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Replace 'main' with your preferred branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Add your build and deployment steps here
+    # For example, you can run tests, build your application, or deploy to a hosting service.
+    # You can use different actions or scripts based on your project's requirements.
