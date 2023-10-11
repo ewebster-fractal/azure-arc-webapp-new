@@ -40,3 +40,10 @@ jobs:
           git add .
           git commit -m "updates"
           git push
+
+      - name:  Build App
+        run:  |
+          cd azure-arc-jumpstart-app
+          npm run build
+          npm start
+          
