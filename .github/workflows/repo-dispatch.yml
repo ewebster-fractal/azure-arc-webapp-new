@@ -27,8 +27,8 @@ jobs:
 
       - name: Copying files from submodule
         run: |
-         source_directory= azure-arc-docs/docs
-         destination_directory= azure-arc-jumpstart-app/public
+         source_directory= azure-arc-docs/docs/
+         destination_directory= azure-arc-jumpstart-app/public/
          pwd
          cp -r $source_directory/* $destination_directory/
       #     rsync -uav /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/img/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/img/        
