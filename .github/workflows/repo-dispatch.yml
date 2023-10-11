@@ -28,7 +28,7 @@ jobs:
       - name: Copying files from submodule
         run: |
          pwd
-         cp -r azure-arc-jumpstart-app/public/* azure-arc-jumpstart-app/public/doc/
+         cp -r azure-arc-jumpstart-app/public/index.html azure-arc-jumpstart-app/public/doc/
       #     rsync -uav /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/img/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/img/        
       - name: Setup Node.js
         uses: actions/setup-node@v2
