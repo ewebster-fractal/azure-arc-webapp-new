@@ -44,6 +44,7 @@ jobs:
       - name:  Build App
         run:  |
           cd azure-arc-jumpstart-app
+          npm install
           npm run build
           npm start
           
