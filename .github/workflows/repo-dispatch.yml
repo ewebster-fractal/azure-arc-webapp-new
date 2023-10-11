@@ -27,10 +27,7 @@ jobs:
 
       - name: Copying files from submodule
         run: |
-          cd azure-arc-jumpstart-app/public
-          mkdir docs && cd docs
-          pwd
-       # rsync -uav /azure-arc-docs/docs/ /azure-arc-jumpstart-app/public/doc/
+         rsync -avz /azure-arc-jumpstart-app/public/ /azure-arc-jumpstart-app/public/doc/
       #     rsync -uav /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/img/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/img/        
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -39,7 +36,6 @@ jobs:
 
       - name: Final Steps
         run: |
-          pwd
           git add .
           git commit -m "updates"
           git push
