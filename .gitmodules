@@ -4,4 +4,4 @@
 	branch = main
 [submodule "azure-arc-docs"]
 	path = azure-arc-docs
-	url = https://github.com/arpitjindal-pythonD/azure-arc-docs.git
+	url = https://github.com/ewebster-fractal/azure-arc-docs.git
