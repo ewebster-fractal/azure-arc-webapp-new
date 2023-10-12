@@ -28,7 +28,7 @@ jobs:
       - name: Copying files from submodule
         run: |
           cd azure-arc-jumpstart-app/public
-          ln -s azure-arc-docs/docs docs
+          ln -s azure-arc-docs/docs symlink_docs
 
         
       # rsync -uav azure-arc-docs/docs/ azure-arc-jumpstart-app/public/docs
