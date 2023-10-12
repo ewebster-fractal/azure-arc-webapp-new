@@ -11,9 +11,12 @@ jobs:
 
     steps:
       - name: Configure Git
+        env: 
+          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+          GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
-          git config --global user.name "arpitjindal-pythonD"
-          git config --global user.email "arpit.jindal@protonmail.com"
+          git config --global user.name "$GIT_USERNAME"
+          git config --global user.email "$GIT_EMAIL"
 
       - name: Checkout Repository
         uses: actions/checkout@v2
