@@ -14,7 +14,7 @@ jobs:
         run: |
           git config --global user.name "arpitjindal-pythonD"
           git config --global user.email "arpit.jindal@protonmail.com"
-          
+
       - name: Checkout Repository
         uses: actions/checkout@v2
 
@@ -25,19 +25,17 @@ jobs:
           git submodule foreach --recursive git fetch
           git submodule foreach --recursive git checkout origin/main
 
-      - name: Copying files from submodule
+      - name: Create Symlink
         run: |
-          cd azure-arc-jumpstart-app/public
-          ln -s azure-arc-docs/docs symlink_docs
+          ln -s azure-arc-docs/docs azure-arc-jumpstart-app/public/symlink_doc
+          # Use the actual paths to your submodule and the symlink target
 
-        
-      # rsync -uav azure-arc-docs/docs/ azure-arc-jumpstart-app/public/docs
-      # rsync -uav azure-arc-docs/img/ azure-arc-jumpstart-app/public/img
-      #     rsync -uav /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-docs/img/ /home/runner/work/azure-arc-webapp-new/azure-arc-webapp-new/azure-arc-jumpstart-app/public/img/        
+      # Rest of your workflow steps
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14 # You can specify the Node.js version you need
+          node-version: 14
 
       - name: Final Steps
         run: |
@@ -45,10 +43,9 @@ jobs:
           git commit -m "updates"
           git push
 
-      - name:  Build App
+      - name: Build App
         run:  |
           cd azure-arc-jumpstart-app
           npm install
           npm run build
           npm start
-          
