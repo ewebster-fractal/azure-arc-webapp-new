@@ -27,7 +27,7 @@ jobs:
 
       - name: Create Symlink
         run: |
-          ln -s azure-arc-docs/docs azure-arc-jumpstart-app/public/symlink_doc
+          ln -s "$(realpath azure-arc-docs/docs)" "azure-arc-jumpstart-app/public/symlink_documents"
           # Use the actual paths to your submodule and the symlink target
 
       # Rest of your workflow steps
